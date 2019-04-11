@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ServisService } from './dina/service/servis.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
@@ -20,9 +25,13 @@ import { RegisterComponent } from './dina/register/register.component';
     RegisterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ServisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
