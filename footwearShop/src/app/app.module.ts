@@ -12,6 +12,8 @@ import { LogInComponent } from './dina/log-in/log-in.component';
 import { HomeComponent } from './dina/home/home.component';
 import { ProductComponent } from './dina/product/product.component';
 import { RegisterComponent } from './dina/register/register.component';
+import { BuyProductComponent } from './dina/buy-product/buy-product.component';
+
 
 
 
@@ -22,7 +24,8 @@ import { RegisterComponent } from './dina/register/register.component';
     LogInComponent,
     HomeComponent,
     ProductComponent,
-    RegisterComponent
+    RegisterComponent,
+    BuyProductComponent
   ],
   imports: [
     BrowserModule,

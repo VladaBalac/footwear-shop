@@ -1,3 +1,30 @@
-<p>
-  register works!
-</p>
+<form [formGroup]="registriForm" (submit)="comfirm()">
+	<div class="form-group row">
+		<label class="col-3" for="userName">User name: </label>
+		<div class="col-7">
+			<input type="text" name="userName" id="userName" class="form-control" formControlName="userName">
+			<small class="text-primary" *ngIf="registriForm.controls.userName.touched && 
+			registriForm.controls.userName.errors?.required">You must input this field</small>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-3" for="password">Password:</label>
+		<div class="col-7">
+			<input type="text" name="password" id="password" class="form-control" formControlName="password">
+			<small class="text-primary" *ngIf="registriForm.controls.password.touched && 
+			registriForm.controls.password.errors?.required">You must Input this field</small>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-3" for="rPassword">Repeat password:</label>
+		<div class="col-7">
+			<input type="text" name="rPassword" id="rPassword" class="form-control" formControlName="rPassword">
+			<small class="text-primary" *ngIf="registriForm.controls.rPassword.touched && 
+			registriForm.controls.rPassword.errors?.required">You must input this field</small>
+			<small class="text-danger" *ngIf="registriForm.controls.rPassword.value &&  registriForm.controls.rPassword.touched && repeatPassword()">Diferent password</small>
+			<small class="text-success" *ngIf="registriForm.controls.rPassword.value && registriForm.controls.rPassword.touched && !repeatPassword()">Success</small>
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary" [disabled]="registriForm.invalid">Confirm</button>
+</form>
