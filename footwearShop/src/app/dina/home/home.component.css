@@ -1,0 +1,16 @@
+.back{
+background-image: url(/assets/images/h.jpg);
+background-size: 100% 100%; 
+}
+
+p{
+	color: white;
+	/*margin: 3em;*/
+	padding: 3em;
+}
+
+footer{
+	text-align: center;
+	color: black;
+	background-color: #B6B5A0;
+}
